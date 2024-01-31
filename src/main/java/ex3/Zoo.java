@@ -37,6 +37,7 @@ public class Zoo {
 	 * Affiche les informations de tous les animaux du zoo.
 	 */
 	public void afficherInformationsAnimaux() {
+		System.out.println("Zoo : " + nom);
 		for (Animal animal : animaux) {
 			System.out.println(animal);
 		}
