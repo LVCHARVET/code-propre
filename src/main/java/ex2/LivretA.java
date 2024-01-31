@@ -10,6 +10,7 @@ public class LivretA extends CompteBancaire {
 
 	/** Constante utilisé dans les calcul de poucentage */
 	private static final int CENT_POURCENT = 100;
+	
 	/** Le taux de rémunération annuel du Livret A */
 	private double tauxRemuneration;
 
