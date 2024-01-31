@@ -15,9 +15,6 @@ public class CompteBancaire {
     /** Le montant de découvert autorisé (0 pour les comptes de type LA) */
     private double decouvert;
 
-    /** Le taux de rémunération annuel du livret A */
-    private double tauxRemuneration;
-
     /** Le type de compte (CC ou LA) */
     private TypeCompte type;
 
@@ -32,19 +29,6 @@ public class CompteBancaire {
         this.type = type;
         this.solde = solde;
         this.decouvert = decouvert;
-    }
-
-    /**
-     * Constructeur pour créer un compte de type Livret A.
-     * 
-     * @param type Le type de compte (CC ou LA).
-     * @param solde Le solde initial du compte.
-     * @param decouvert Le montant de découvert autorisé (0 pour les comptes de type LA).
-     * @param tauxRemuneration Le taux de rémunération annuel du livret A.
-     */
-    public CompteBancaire(TypeCompte type, double solde, double decouvert, double tauxRemuneration) {
-        this(type, solde, decouvert);
-        this.tauxRemuneration = tauxRemuneration;
     }
 
     /**
@@ -76,9 +60,6 @@ public class CompteBancaire {
      * Applique la rémunération annuelle au solde du livret A.
      */
     public void appliquerRemuAnnuelle() {
-        if (type == TypeCompte.LA) {
-            this.solde += solde * tauxRemuneration / 100;
-        }
     }
 
     /**
@@ -115,24 +96,6 @@ public class CompteBancaire {
      */
     public void setDecouvert(double decouvert) {
         this.decouvert = decouvert;
-    }
-
-    /**
-     * Getter pour le taux de rémunération annuel du livret A.
-     * 
-     * @return Le taux de rémunération annuel du livret A.
-     */
-    public double getTauxRemuneration() {
-        return tauxRemuneration;
-    }
-
-    /**
-     * Setter pour le taux de rémunération annuel du livret A.
-     * 
-     * @param tauxRemuneration Le nouveau taux de rémunération annuel du livret A.
-     */
-    public void setTauxRemuneration(double tauxRemuneration) {
-        this.tauxRemuneration = tauxRemuneration;
     }
 
     /**
